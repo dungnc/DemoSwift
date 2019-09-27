@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TasksViewController" customModule="TediousProvider" customModuleProvider="target">
+            <connections>
+                <outlet property="segmentedControl" destination="bGZ-fc-KNI" id="I7T-cz-QpR"/>
+                <outlet property="tableView" destination="95U-Zw-Dt6" id="kyJ-dp-qhk"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yW-9o-QWQ">
+                    <rect key="frame" x="0.0" y="-30" width="375" height="144"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGZ-fc-KNI" customClass="CustomSegmentedControl" customModule="TediousProvider" customModuleProvider="target">
+                            <rect key="frame" x="51" y="97" width="273" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="39a-0N-XLM"/>
+                                <constraint firstAttribute="width" constant="273" id="UC9-qE-7Jd"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="txtColor">
+                                    <color key="value" red="0.12941176470588234" green="0.5725490196078431" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="commaSeperatedBtnTitles" value="Available Tasks, My Tasks"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectorColor">
+                                    <color key="value" red="0.12941176470588234" green="0.5725490196078431" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectorTxtColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="customSegmentedControlValueChanged:" destination="-1" eventType="valueChanged" id="hLB-t5-etK"/>
+                            </connections>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKP-Vw-EcK">
+                            <rect key="frame" x="0.0" y="53" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.12941176470588234" green="0.5725490196078431" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="bGZ-fc-KNI" firstAttribute="top" secondItem="6yW-9o-QWQ" secondAttribute="top" constant="97" id="0Ev-3h-EzD"/>
+                        <constraint firstItem="bGZ-fc-KNI" firstAttribute="centerX" secondItem="6yW-9o-QWQ" secondAttribute="centerX" id="T6s-lR-Xig"/>
+                        <constraint firstAttribute="height" constant="144" id="kK3-yu-xNg"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="238" estimatedRowHeight="238" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="95U-Zw-Dt6" customClass="TableViewWithButtons" customModule="TediousProvider" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="114" width="375" height="553"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="9b1-GT-jLz"/>
+                        <outlet property="delegate" destination="-1" id="Ii3-1z-qJr"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="95U-Zw-Dt6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="AWA-Ks-HNS"/>
+                <constraint firstItem="6yW-9o-QWQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-50" id="C0S-Mr-bT8"/>
+                <constraint firstItem="95U-Zw-Dt6" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Pj7-Jo-w2J"/>
+                <constraint firstItem="6yW-9o-QWQ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="S8x-sI-Dss"/>
+                <constraint firstItem="6yW-9o-QWQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="V51-dy-4W4"/>
+                <constraint firstItem="95U-Zw-Dt6" firstAttribute="top" secondItem="6yW-9o-QWQ" secondAttribute="bottom" id="ZlV-8B-6vo"/>
+                <constraint firstItem="95U-Zw-Dt6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dgH-UU-Ii2"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

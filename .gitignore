@@ -1,0 +1,4 @@
+/Pods/
+/Tedious.xcworkspace/
+*.lock
+/functions/node_modules/
